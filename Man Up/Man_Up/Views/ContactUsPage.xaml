@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Man_Up.ViewModels;"
+             x:Class="Man_Up.Views.ContactUsPage"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:ContactUsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="15">
+                <Label Text="Contact Us" FontSize="Large"/>
+                <Label Text="Name" />
+                <Editor x:Name="name" />
+                <Label Text="Message" />
+                <Editor x:Name="message" HeightRequest="130" />
+                <Button Text="Send Message" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

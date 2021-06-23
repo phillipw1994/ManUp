@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="Man_Up.Views.LocationDetailPage"
+             Title="{Binding Title}">
+    <ContentView>
+        <ScrollView x:Name="svMain" VerticalOptions="FillAndExpand" Orientation="Vertical">
+        <StackLayout Spacing="20" Padding="15" x:Name="slMain">
+            <Label Text="Main Details:" FontSize="Medium"/>
+            <Grid x:Name="MainDetails">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Located:" FontSize="Small"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Item.LocationName}" FontSize="Small"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Address:" FontSize="Small"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Item.AddressLine1}" FontSize="Small"/>
+
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Item.AddressLine2}" FontSize="Small"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Day of Week:" FontSize="Small"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding Item.DayOfWeek}" FontSize="Small"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Time:" FontSize="Small"/>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding Item.Time}" FontSize="Small"/>
+            </Grid>
+            <Label Text="Facilitator Details:" FontSize="Medium"/>
+                <Grid x:Name="FacilitatorDetails">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Facilitated By: " FontSize="Small"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Item.Facilitator}" FontSize="Small"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Phone Number:" FontSize="Small"/>
+                    <Label x:Name="phone" Grid.Row="1" Grid.Column="1" Text="{Binding Item.FacilitatorPhone}" FontSize="Small"/>
+                </Grid>
+                <maps:Map
+            x:Name="MyMap"
+            IsShowingUser="true" 
+            HeightRequest="400"
+            WidthRequest="960"
+            MapType="Street"
+        />
+                <Grid x:Name="GridMapButtons">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </StackLayout>
+    </ScrollView>
+    </ContentView>
+</ContentPage>

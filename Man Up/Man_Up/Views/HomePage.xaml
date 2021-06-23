@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Man_Up.Views.HomePage"
+             xmlns:vm="clr-namespace:Man_Up.ViewModels;"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="About App" Order="Secondary" Priority="0" Clicked="DeveloperInfo" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="man_up_logo.png"></Image>
+                <StackLayout Spacing="20" Padding="15">
+                    <Label Text="Man Up is an organisation aimed at providing support to men from all walks of life" FontSize="Small"/>
+                    <Label Text="We have multiple locations throughout the canterbury region. So find the closest one to you today" FontSize="Small"/>
+                    <Label Text="We help men to deal with: Drugs, Alcohol, Domestic Violence, Suicide, Abuse, Molestation, Distrust, Jealousy, Confidence Issues and many more" FontSize="Small"/>
+                    <Image Source="facebook_man_up.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="OpenWebPage"  />
+                            </Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding OpenWebCommand}"
+                            CommandParameter="Image1" />
+                    </Image>
+                </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
